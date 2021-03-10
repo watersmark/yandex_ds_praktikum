@@ -1,6 +1,9 @@
-import pandas as pd
+import numpy as np
+import scipy.spatial.distance
 
-df = pd.read_csv('data.csv')
-print(df.head(10))
-print('--------------------------------------')
-df.info()
+
+vectors = np.array([[7, 1, 5, 3], [5, 5, 4, 2], [3, 4, 5, 4]])
+
+
+dist = scipy.spatial.distance.pdist(vectors, 'cosine')
+print(dist)
